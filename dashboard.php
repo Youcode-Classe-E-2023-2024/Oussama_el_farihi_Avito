@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
   $product_picture_name = $_FILES['product_picture']['name'];
   $product_picture_tmp = $_FILES['product_picture']['tmp_name'];
 
-  move_uploaded_file($product_picture_tmp, "../img/$product_picture_name");
+  move_uploaded_file($product_picture_tmp, "./img/$product_picture_name");
 
 
   $stmt = $conn->prepare("INSERT INTO `annonce` (image, titre, description, prix) VALUES (?, ?, ?, ?)");
@@ -153,7 +153,6 @@ if (isset($_POST['submit'])) {
                     </svg>
                     <div class="mt-4 flex text-sm leading-6 text-gray-600">
                       <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
-                        <span>Upload a file</span>
                         <input type="file" id="product_picture" name="product_picture" class="sr-only">
                       </label>
                     </div>
