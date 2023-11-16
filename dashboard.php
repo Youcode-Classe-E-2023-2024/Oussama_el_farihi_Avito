@@ -1,3 +1,29 @@
+<?php
+
+include 'connection.php';
+
+if (isset($_POST['submit'])) {
+  $product_title = $_POST['product_title'];
+  $product_description = $_POST['product_description'];
+  $product_price = $_POST['product_price'];
+  $product_picture_name = $_FILES['product_picture']['name'];
+  $product_picture_tmp = $_FILES['product_picture']['tmp_name'];
+
+  move_uploaded_file($product_picture_tmp, "../img/$product_picture_name");
+
+
+  $stmt = $conn->prepare("INSERT INTO `annonce` (image, titre, description, prix) VALUES (?, ?, ?, ?)");
+  $stmt->bind_param('ssss', $product_picture_name, $product_title, $product_description, $product_price);
+  if ($stmt->execute()) {
+    echo "<script>alert('Data inserted successfully');</script>";
+  } else {
+    echo "<script>alert('Failed to execute statement: " . $stmt->error . "');</script>";
+  }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,7 +132,7 @@
   }
   ```
 -->
-      <form>
+      <form method="POST" enctype="multipart/form-data">
         <div class="space-y-12">
           <div class="border-b border-gray-900/10 pb-12">
             <h2 class="text-base font-semibold leading-7 text-gray-900">Profile</h2>
@@ -126,13 +152,12 @@
                         clip-rule="evenodd" />
                     </svg>
                     <div class="mt-4 flex text-sm leading-6 text-gray-600">
-                      <label for="file-upload"
-                        class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                      <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                         <span>Upload a file</span>
-                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                        <input type="file" id="product_picture" name="product_picture" class="sr-only">
                       </label>
-                      <p class="pl-1">or drag and drop</p>
                     </div>
+                    <input type="file" name="product_picture">
                     <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
                   </div>
                 </div>
@@ -142,32 +167,28 @@
 
           <div class="border-b border-gray-900/10 pb-12">
 
-            <div class="col-span-full">
-              <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Product
-                Title</label>
-              <div class="mt-2">
-                <input type="text" name="street-address" id="street-address" autocomplete="street-address"
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
+          <div class="col-span-full">
+    <label for="product_title" class="block text-sm font-medium leading-6 text-gray-900">Product Title</label>
+    <div class="mt-2">
+      <input type="text" name="product_title" id="product_title" autocomplete="street-address"
+        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+    </div>
+  </div>
 
-            <div class="col-span-full">
-              <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Product
-                Description</label>
-              <div class="mt-2">
-                <input type="text" name="street-address" id="street-address" autocomplete="street-address"
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
+  <div class="col-span-full">
+    <label for="product_description" class="block text-sm font-medium leading-6 text-gray-900">Product Description</label>
+    <div class="mt-2">
+      <input type="text" name="product_description" id="product_description" autocomplete="street-address"
+        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+    </div>
+  </div>
 
-            <div class="sm:col-span-2 sm:col-start-1">
-              <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Product Price</label>
-              <div class="mt-2">
-                <input type="number" name="city" id="city" autocomplete="address-level2"
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
-
+  <div class="sm:col-span-2 sm:col-start-1">
+    <label for="product_price" class="block text-sm font-medium leading-6 text-gray-900">Product Price</label>
+    <div class="mt-2">
+      <input type="number" name="product_price" id="product_price" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+    </div>
+  </div>
           </div>
         </div>
 
@@ -177,8 +198,7 @@
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
           <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-          <button type="submit"
-            class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+          <button type="submit" name="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
         </div>
       </form>
     </div>
