@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS avito_database;
 USE avito_database;
 
 -- Create the Utilisateur table
-CREATE TABLE Utilisateur (
+CREATE TABLE utilisateur (
     id INT PRIMARY KEY,
     nom VARCHAR(255),
     email VARCHAR(255),
@@ -11,8 +11,9 @@ CREATE TABLE Utilisateur (
 );
 
 -- Create the Annonce table
-CREATE TABLE Annonce (
+CREATE TABLE annonce (
     id INT PRIMARY KEY,
+    image varchar(255),
     titre VARCHAR(255),
     description TEXT,
     prix FLOAT,
