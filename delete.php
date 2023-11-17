@@ -65,11 +65,12 @@ $products = $result->fetch_all(MYSQLI_ASSOC);
             </div>
     </div>
     <main>
-        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <div class="mt-6">
-                <h2 class="text-2xl font-bold leading-7 text-gray-900">Delete Products</h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Select products to delete:</p>
+        <header class="bg-white shadow">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Edit Products</h1>
             </div>
+        </header>
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
 
             <form method="POST" action="delete.php">
                 <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
