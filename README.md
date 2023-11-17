@@ -66,16 +66,16 @@ Description: The main file for the Avito annonces site. It should include the ne
 #### File:
 
 ![Capture d'écran Accueil](screenshot/index.jpeg)
-*Page d'accueil du site Avito*
+##### Page d'accueil du site Avito
 
 ![Capture d'écran Tableau de Bord](screenshot/dashboard.jpeg)
-*Exemple de la page du tableau de bord*
+##### Exemple de la page du tableau de bord
 
 ![Capture d'écran Tableau de Bord](screenshot/delete.jpeg)
-*Exemple de la page du seppression des annonces*
+##### Exemple de la page du seppression des annonces
 
 ![Capture d'écran Tableau de Bord](screenshot/edit.jpeg)
-*Exemple de la page du modificaation des annonces*
+##### Exemple de la page du modificaation des annonces
 
 ## Usage
 
