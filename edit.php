@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     } else {
         echo "<script>alert('Failed to update product: " . $stmt->error . "');</script>";
     }
+    header("Location: ". $_SERVER['PHP_SELF']);
+  exit();
 }
 
 ?>
@@ -70,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
         <main>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             <h2 class="text-base font-semibold leading-7 text-gray-900">Profile</h2>
-            <p class="mt-1 text-sm leading-6 text-gray-600">This information will be displayed publicly so be careful
+            <p class="mt-1 text-sm leading-6 text-gray-600 mb-6">This information will be displayed publicly so be careful
               what you edit.</p>
                 <!-- Display products for editing -->
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

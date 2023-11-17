@@ -20,6 +20,8 @@ if (isset($_POST['delete'])) {
     } else {
         echo "<script>alert('No products selected for deletion');</script>";
     }
+    header("Location: ". $_SERVER['PHP_SELF']);
+  exit();
 }
 
 // Fetch all products for display
