@@ -71,7 +71,9 @@ $products = $result->fetch_all(MYSQLI_ASSOC);
             </div>
         </header>
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-
+        <h2 class="text-base font-semibold leading-7 text-gray-900">Profile</h2>
+            <p class="mt-1 text-sm leading-6 text-gray-600">This information will be displayed publicly so be careful
+              what you delete.</p>
             <form method="POST" action="delete.php">
                 <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                     <?php foreach ($products as $product): ?>
