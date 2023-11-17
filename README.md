@@ -41,7 +41,7 @@ Description : Ce fichier inclut le code PHP pour insérer des données dans la b
 
 - `delete.php`
 
-Description : Ce fichier inclut le code PHP pour supprimer des entrées spécifiques (`delete.php`) ou vider l'ensemble de la base de données (`deleteAll.php`).
+Description : Ce fichier inclut le code PHP pour supprimer des entrées spécifiques (`delete.php`).
 
 ### 6. Modification de Données
 
