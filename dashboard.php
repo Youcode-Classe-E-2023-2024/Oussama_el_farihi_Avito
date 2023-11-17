@@ -14,11 +14,14 @@ if (isset($_POST['submit'])) {
 
   $stmt = $conn->prepare("INSERT INTO `annonce` (image, titre, description, prix) VALUES (?, ?, ?, ?)");
   $stmt->bind_param('ssss', $product_picture_name, $product_title, $product_description, $product_price);
+  
   if ($stmt->execute()) {
     echo "<script>alert('Data inserted successfully');</script>";
   } else {
     echo "<script>alert('Failed to execute statement: " . $stmt->error . "');</script>";
   }
+  header("Location: ". $_SERVER['PHP_SELF']);
+  exit();
 }
 
 ?>
