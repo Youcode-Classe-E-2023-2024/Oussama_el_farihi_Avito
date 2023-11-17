@@ -69,6 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
         </header>
         <main>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            <h2 class="text-base font-semibold leading-7 text-gray-900">Profile</h2>
+            <p class="mt-1 text-sm leading-6 text-gray-600">This information will be displayed publicly so be careful
+              what you edit.</p>
                 <!-- Display products for editing -->
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     <?php
@@ -81,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
 
                         echo "
                         <div class='p-6 bg-white border rounded-lg shadow-md'>
-                            <img src='img/$product_picture' class='w-full h-32 object-cover mb-4'>
+                            <img src='img/$product_picture' class='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80'>
                             <form method='POST'>
                                 <input type='hidden' name='product_id' value='$product_id'>
                                 <label for='product_title' class='block text-sm font-medium text-gray-700'>Title</label>
