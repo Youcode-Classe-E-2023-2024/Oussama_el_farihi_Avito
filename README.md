@@ -61,7 +61,7 @@ Description: This file contains PHP code for editing existing data in the databa
 
 Description: The main file for the Avito annonces site. It should include the necessary code for user interaction and data presentation. Ensure all other files and functionalities are appropriately included.
 
-### 8. Website 
+### 8. Website View
 
 #### File:
 
