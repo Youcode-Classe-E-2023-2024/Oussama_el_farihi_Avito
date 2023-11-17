@@ -2,7 +2,7 @@
 
 ## Overview
 
-L'entreprise Avito, dans sa logique de refactorisation, souhaite redéfinir les modèles de son site d'annonces. Ce projet vise à accomplir plusieurs tâches, allant de la création de diagrammes à l'implémentation de scripts PHP et MySQL pour la gestion de la base de données.
+Avito souhaite améliorer son site d'annonces en repensant ses structures. Ce projet implique des étapes diverses, de la conception de diagrammes à l'utilisation de scripts PHP et MySQL pour gérer la base de données.
 
 ## Project Structure
 
