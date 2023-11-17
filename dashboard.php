@@ -35,22 +35,6 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-  <!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
-  ```
--->
-  <!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
-  ```
--->
   <div class="min-h-full">
     <nav class="bg-gray-800">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -68,17 +52,6 @@ if (isset($_POST['submit'])) {
               </div>
             </div>
           </div>
-
-          <!--
-                Dropdown menu, show/hide based on menu state.
-
-                Entering: "transition ease-out duration-100"
-                  From: "transform opacity-0 scale-95"
-                  To: "transform opacity-100 scale-100"
-                Leaving: "transition ease-in duration-75"
-                  From: "transform opacity-100 scale-100"
-                  To: "transform opacity-0 scale-95"
-                -->
         </div>
       </div>
   </div>
@@ -90,20 +63,6 @@ if (isset($_POST['submit'])) {
   </header>
   <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-      <!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
       <form method="POST" enctype="multipart/form-data">
         <div class="space-y-12">
           <div class="border-b border-gray-900/10 pb-12">
@@ -129,7 +88,7 @@ if (isset($_POST['submit'])) {
                       </label>
                     </div>
                     <input type="file" name="product_picture">
-                    <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                    <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF</p>
                   </div>
                 </div>
               </div>
