@@ -62,8 +62,9 @@ if (isset($_POST['submit'])) {
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                  aria-current="page">Dashboard</a>
+                <a href="dashboard.php" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Add</a>
+                <a href="delete.php" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Delete</a>
+                <a href="edit.php" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Edit</a>
               </div>
             </div>
           </div>
@@ -82,38 +83,9 @@ if (isset($_POST['submit'])) {
       </div>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="md:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-        aria-current="page">Dashboard</a>
-      <a href="#"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-      <a href="#"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-      <a href="#"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
-      <a href="#"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Reports</a>
-    </div>
-    <div class="mt-3 space-y-1 px-2">
-      <a href="#"
-        class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your
-        Profile</a>
-      <a href="#"
-        class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
-      <a href="#"
-        class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign
-        out</a>
-    </div>
-  </div>
-  </div>
-  </nav>
-
   <header class="bg-white shadow">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Add product</h1>
     </div>
   </header>
   <main>
@@ -204,5 +176,4 @@ if (isset($_POST['submit'])) {
   </main>
   </div>
 </body>
-
 </html>
